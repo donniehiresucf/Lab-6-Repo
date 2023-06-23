@@ -1,7 +1,27 @@
-#include <stdio.h>
+/* Donald Hires
+COP3502-0004
+Lab Assignment 6
+Recursion
+Date: 06/23/2023 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+// Search function was implemented 6/23/2023
+// Recursive search of sorted list
+// Returns the index of item in numbers if it matches value
+// Returns -1 otherwise
 int search(int numbers[], int low, int high, int value) 
 {
+	while (low <= high) {
+		if (numbers[low] == value) {
+			return low;
+		}
+		else {
+			return search(numbers, low+1, high, value);
+		}
+	}
+	
 	return -1;
 }
 
